@@ -9,12 +9,6 @@ FrameProcessor::FrameProcessor()
 	right = Mat(480, 640, CV_8UC1);
 	out = Mat(480, 640, CV_8UC3);
 	pv = new PointViewer(640*480);
-	cv::VideoCapture cap(0);
-	while (1)
-	{
-		cap >> left;
-		dev.process(left.data, left.data, pv->data);
-	}
 }
 
 void FrameProcessor::prepareData(QByteArray data, int frameIndex)
